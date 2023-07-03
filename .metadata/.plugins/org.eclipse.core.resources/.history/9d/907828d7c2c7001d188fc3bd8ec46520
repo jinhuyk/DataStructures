@@ -1,0 +1,54 @@
+package Stack;
+
+public class ArrayStack implements Stack{
+
+	@SuppressWarnings("unused")
+	private char[] S;
+	private int t;
+	private int N;
+	
+	public ArrayStack(int N) {
+		S = new char[N];
+		t = -1;
+		this.N = N;
+	}
+	@Override
+	public int size() {
+		return t+1;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return t < 0;
+	}
+
+	@Override
+	public char top() {
+		if(!isEmpty()) {
+			throw new EmptyStackException();
+		}
+		else return S[t];
+	}
+
+	@Override
+	public char push(char o) {
+		if(t == N-1) {
+			//throw new FullStackException();
+		}
+		else {
+			t = t+1;
+			S[t] = o;
+			return o;
+		}
+		
+		
+	}
+
+	@Override
+	public char pop() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

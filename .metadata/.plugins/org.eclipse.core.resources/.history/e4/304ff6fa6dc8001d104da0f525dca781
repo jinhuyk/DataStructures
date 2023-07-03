@@ -1,0 +1,40 @@
+package Assignment3;
+
+public class StackQueue implements Queue {
+
+	@Override
+	public int size() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public char front() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void enqueue(char o) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public char dequeue() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

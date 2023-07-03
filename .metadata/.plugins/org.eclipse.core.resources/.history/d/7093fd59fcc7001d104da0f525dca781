@@ -1,0 +1,81 @@
+package Stack;
+
+import java.util.EmptyStackException;
+import java.util.Scanner;
+
+public class ArrayStack implements Stack{
+
+	private char[] S;
+	private int t;
+	private int N;
+	
+	public ArrayStack(int N) {
+		S = new char[N];
+		t = -1;
+		this.N = N;
+	}
+	@Override
+	public int size() {
+		return t+1;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return t < 0;
+	}
+
+	@Override
+	public char top() {
+		if(!isEmpty()) {
+			throw new EmptyStackException();
+		}
+		else return S[t];
+	}
+
+	@Override
+	public char push(char o) {
+		if(t == N-1) {
+			throw new FullStackException();
+		}
+		else {
+			t = t+1;
+			S[t] = o;
+		}
+		return o;	
+	}
+
+	@Override
+	public char pop() {
+		if(isEmpty()) {
+			throw new EmptyStackException();
+		}
+		else {
+			char o = S[t];
+			t = t-1;
+			return o;
+		}
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String S;
+		ArrayStack stack = new ArrayStack(10);
+		Scanner scan = new Scanner(System.in);
+		S = scan.nextLine();
+		char[] arrS = S.toCharArray();
+
+		for( char i : arrS) {
+			System.out.println(i);
+
+			if(i != ' ') {
+				System.out.println("pass");
+				continue;
+			}
+			stack.push(i);
+		}
+		for(int i = 0 ;i< stack.size();i++) {
+			System.out.print(stack.pop());
+		}
+	}
+
+}

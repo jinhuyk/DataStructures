@@ -1,0 +1,63 @@
+package Assignment3;
+
+import java.util.Scanner;
+
+public class TestMain {
+
+	public static void main(String[] args) {
+		
+		// Assignment 2
+		String S;
+		ArrayStack stack = new ArrayStack(50);
+		Scanner scan = new Scanner(System.in);
+		S = scan.nextLine();
+		char[] arrS = S.toCharArray();
+
+		for( char i : arrS) {
+			if(i == '(') {
+				stack.push(')');
+			}
+			else if(i == ')') {
+				stack.push('(');
+			}
+			else {
+				stack.push(i);
+			}
+		}
+		
+		while(!stack.isEmpty()) {
+			System.out.print(stack.pop());
+		}
+		
+		
+		// Assignment 3
+		StackQueue queue = new StackQueue(40);
+		
+		for(char i = 97;i<102;i++) {
+			queue.enqueue(i);
+		}
+		for(int i = 0;i<3;i++) {
+			System.out.print(queue.dequeue());
+		}
+		for(char i = 102;i<107;i++) {
+			queue.enqueue(i);
+		}
+		for(int i = 0;i<3;i++) {
+			System.out.print(queue.dequeue());
+		}
+		for(char i = 107;i<112;i++) {
+			queue.enqueue(i);
+		}
+		for(int i = 0;i<6;i++) {
+			System.out.print(queue.dequeue());
+		}
+		while(!queue.isEmpty()) {
+			System.out.print(queue.dequeue());
+		}
+		
+		StackQueue q = new StackQueue(40);
+		q.enqueue('a');
+		System.out.print(q.dequeue());
+	}
+
+}

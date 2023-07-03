@@ -1,0 +1,32 @@
+package Assignment3;
+
+public class Assignment3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StackQueue queue = new StackQueue(40);
+		
+		for(char i = 97;i<102;i++) {
+			queue.enqueue(i);
+		}
+		for(int i = 0;i<3;i++) {
+			System.out.print(queue.dequeue());
+		}
+		for(char i = 102;i<107;i++) {
+			queue.enqueue(i);
+		}
+		for(int i = 0;i<3;i++) {
+			System.out.print(queue.dequeue());
+		}
+		for(char i = 107;i<112;i++) {
+			queue.enqueue(i);
+		}
+		for(int i = 0;i<6;i++) {
+			System.out.print(queue.dequeue());
+		}
+		while(!queue.isEmpty()) {
+			System.out.print(queue.dequeue());
+		}
+	}
+
+}
